@@ -1,0 +1,27 @@
+.countryContainer{
+    display:inline-block;
+    width:15%;
+    height:4%;
+    background-color: darkblue;
+    padding:1% 0 0 1%;
+    margin-bottom:1%;
+}
+
+.countryName{
+    color:#fff;
+    font-weight: bold;
+    font-size:16px;
+    border-bottom:2px solid #fff;
+    margin-bottom:5%;
+}
+
+.capital{
+    color:#fff;
+    display:block;
+    font-size: 10px;
+}
+
+.region{
+    color:#fff;
+    font-size:10px;
+}
