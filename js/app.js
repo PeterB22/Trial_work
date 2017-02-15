@@ -29,7 +29,11 @@ listCountries.controller('HomeController',function($scope){
 
 listCountries.controller('ListController',function($scope,$http){
 
-    $scope.$watch('countryName',function() {
+        watchElements("currencyUsedByCountries", "currency", "searchCurrency", $scope, $http);
+        watchElements("inRegion", "region", "regions", $scope, $http);
+        watchElements("countryName", "name", "searchCountry", $scope, $http);
+
+  /*  $scope.$watch('countryName',function() {
         if (typeof $scope.countryName != 'undefined') {
 
             $http.get("https://restcountries.eu/rest/v1/name/" + $scope.countryName)
@@ -53,7 +57,7 @@ listCountries.controller('ListController',function($scope,$http){
     });
 
 
- /*   $scope.$watch('currencyUsedByCountries',function(){
+    $scope.$watch('currencyUsedByCountries',function(){
         if(typeof $scope.currencyUsedByCountries != 'undefined') {
             $http.get("https://restcountries.eu/rest/v1/currency/" + $scope.currencyUsedByCountries)
                 .then(function (response) {
@@ -65,11 +69,11 @@ listCountries.controller('ListController',function($scope,$http){
 
         }
     });*/
-  //  watchElements("currencyUsedByCountries","currency","searchCurrency");
-  //  watchElements("inRegion","region","regions");
-    console.log($scope);
-      watchElements("countryName","name","searchCountry",$scope,$http);
+
 });
+
+
+
 
 
 function watchElements(target,type,name,scope,http){
