@@ -1,6 +1,6 @@
 .countryContainer{
     display:inline-block;
-    width:15%;
+    width:25%;
     height:4%;
     background-color: darkblue;
     padding:1% 0 0 1%;
@@ -25,3 +25,4 @@
     color:#fff;
     font-size:10px;
 }
+

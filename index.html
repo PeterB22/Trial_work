@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Example</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-route.js"></script>
+    <link rel="stylesheet" href="css/default.css" />
+</head>
+<body>
+
+<div ng-app="CountryList" ng-controller="MainController">
+    <script type="text/ng-template" id="pages/home.html">
+        <a href="#/list">List</a>
+        <h1>Home</h1>
+        <h3>{{message}}</h3>
+    </script>
+
+
+    <script type="text/ng-template" id="pages/edit.html">
+
+        <h1>Edit</h1>
+        <h3>{{message}}</h3>
+    </script>
+
+
+    <script type="text/ng-template" id="pages/list.html">
+        <p><a href="#/">Back to main page</a></p>
+
+        <form>
+             <fieldset>
+                 <legend>Filter</legend>
+                 <label>Region:</label>
+                 <select name="regions" ng-model="inRegion">
+                     <option value="">-- Choose --</option>
+                     <option value="europe">Europe</option>
+                     <option value="africa">Africa</option>
+                     <option value="asia">Asia</option>
+                     <option value="americas">Americas</option>
+                     <option value="oceania">Oceania</option>
+                     <option value="polar">Polar</option>
+                 </select>
+
+                 <br />
+                 <label>Country name: </label>
+                 <input type="text" ng-model="countryName" name="searchCountry" onclick="select()"  placeholder="Enter country name" />
+
+
+                 <br />
+                 <label>Currency: </label>
+                 <input type="text" ng-model="currencyUsedByCountries" name="searchCurrency" onclick="select()" placeholder="Enter currency" />
+
+
+             </fieldset>
+
+        </form>
+
+
+        <div class="countries">
+            <div ng-if="details" ng-repeat="country in details | limitTo:10">
+                <div class="countryContainer animate-repeat">
+                    <div class="countryName">{{country.name}}</div>
+                    <div class="capital">{{country.capital}}</div>
+                    <div class="region">{{country.region}}</div>
+                </div>
+            </div>
+        </div>
+
+
+
+    </script>
+
+
+
+
+
+
+
+
+
+    <div id="main">
+        <div ng-view></div>
+
+        <script src="js/app.js"></script>
+    </div>
+</div>
+</body>
+</html>
